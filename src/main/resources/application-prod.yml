@@ -1,0 +1,21 @@
+server:
+  port: {$PORT}
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+    uri: {$CONFIG_SERVER_URI}
+
+logging:
+  level:
+    com:
+      netflix:
+        eureka: OFF
+        discovery: OFF
