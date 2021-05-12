@@ -2,8 +2,6 @@ server:
   port: ${PORT}
 
 eureka:
-  instance:
-    hostname: ${HOST}
   client:
     serviceUrl.defaultZone: ${SERVICE_DISCOVERER_URL}/eureka/
     registerWithEureka: false
