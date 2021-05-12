@@ -1,0 +1,5 @@
+spring:
+  cloud:
+    config:
+      name: fbk-service-discoverer
+    uri: ${CONFIG_SERVER_URL}

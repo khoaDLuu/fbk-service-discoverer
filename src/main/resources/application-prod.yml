@@ -1,21 +1,12 @@
 server:
-  port: {$PORT}
+  port: ${PORT}
 
 eureka:
+  instance:
+    hostname: ${HOST}
   client:
+    serviceUrl.defaultZone: ${SERVICE_DISCOVERER_URL}/eureka/
     registerWithEureka: false
     fetchRegistry: false
 
-spring:
-  cloud:
-    config:
-      discovery:
-        enabled: true
-    uri: {$CONFIG_SERVER_URI}
-
-logging:
-  level:
-    com:
-      netflix:
-        eureka: OFF
-        discovery: OFF
+spring.config.import: optional:configserver:${CONFIG_SERVER_URL}
